@@ -5,17 +5,18 @@ import OpenAI from "openai";
 import pg from "pg";
 
 dotenv.config(); // Load environment variables from .env file
-
+// Enable CORS with specific origin
+app.use(cors({
+    origin: 'https://talesv1.vercel.app'
+  }));
+  
 const app = express();
 app.use(express.json());
 const port = process.env.PORT || 6000;
 
 
   
-// Enable CORS with specific origin
-app.use(cors({
-    origin: 'https://talesv1.vercel.app'
-  }));
+
 // Initialize PostgreSQL client
 {/* !!!: alert */}
 const db = new pg.Client({
