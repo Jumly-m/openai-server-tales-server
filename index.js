@@ -12,8 +12,10 @@ const port = process.env.PORT || 6000;
 
 
   
-// Enable CORS for all routes
-app.use(cors({ origin: '*' }));
+// Enable CORS with specific origin
+app.use(cors({
+    origin: 'https://talesv1.vercel.app/tales'
+  }));
 // Initialize PostgreSQL client
 {/* !!!: alert */}
 const db = new pg.Client({
