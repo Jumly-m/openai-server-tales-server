@@ -11,7 +11,11 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 
 // Enable CORS for all routes
-app.use(cors());
+const corsOptions = {
+    origin: 'https://talesv1.vercel.app'
+  };
+  app.use(cors(corsOptions));
+  
 
 // Initialize PostgreSQL client
 const db = new pg.Client({
