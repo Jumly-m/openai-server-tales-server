@@ -8,7 +8,7 @@ dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 app.use(express.json());
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 6000;
 
 // Enable CORS for all routes
 // Enable CORS for all routes
@@ -16,6 +16,7 @@ app.use(cors());
   
 
 // Initialize PostgreSQL client
+{/* !!!: alert */}
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
