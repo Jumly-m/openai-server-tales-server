@@ -5,12 +5,13 @@ import OpenAI from "openai";
 import pg from "pg";
 
 dotenv.config(); // Load environment variables from .env file
-// Enable CORS with specific origin
+
+
+const app = express();
 app.use(cors({
-    origin: 'https://talesv1.vercel.app'
+    origin: '*'
   }));
   
-const app = express();
 app.use(express.json());
 const port = process.env.PORT || 6000;
 
