@@ -10,11 +10,10 @@ const app = express();
 app.use(express.json());
 const port = process.env.PORT || 6000;
 
-// Enable CORS for all routes
-// Enable CORS for all routes
-app.use(cors());
-  
 
+  
+// Enable CORS for all routes
+app.use(cors({ origin: '*' }));
 // Initialize PostgreSQL client
 {/* !!!: alert */}
 const db = new pg.Client({
