@@ -30,8 +30,8 @@ app.post('/ask', async (req, res) => {
     const completion = await openai.chat.completions.create({
       messages: [
         { "role": "assistant", "content": `You are TalesAI Ask user short questions based on the story and give him score: ${userStory}` },
-        { "role": "assistant", "content": `Give user score based on: ${userStory}` },
         { "role": "user", "content": userStory },
+        { "role": "assistant", "content": `Give user score based on: ${userStory}` },
       ],
       model: "gpt-3.5-turbo",
     });
