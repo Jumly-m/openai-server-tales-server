@@ -29,7 +29,9 @@ app.post('/ask', async (req, res) => {
     // Send the user's story to OpenAI for generating response
     const completion = await openai.chat.completions.create({
       messages: [
-        { "role": "assistant", "content": `Ask user short questions based on the story: ${userStory}` },
+        { "role": "assistant", "content": `You are TalesAI Ask user short questions based on the story and give him score: ${userStory}` },
+        { "role": "assistant", "content": `Give user score based on: ${userStory}` },
+        { "role": "assistant", "content": `if user answer correct say congratulation you get correct based on: ${userStory}` },
         { "role": "user", "content": userStory },
       ],
       model: "gpt-3.5-turbo",
