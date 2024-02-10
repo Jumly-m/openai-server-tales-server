@@ -31,7 +31,6 @@ app.post('/ask', async (req, res) => {
       messages: [
         { "role": "assistant", "content": `You are TalesAI Ask user short questions based on the story and give him score: ${userStory}` },
         { "role": "assistant", "content": `Give user score based on: ${userStory}` },
-        { "role": "assistant", "content": `if user answer correct say congratulation you get correct based on: ${userStory}` },
         { "role": "user", "content": userStory },
       ],
       model: "gpt-3.5-turbo",
